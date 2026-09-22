@@ -56,3 +56,29 @@ See `docs/scope.md` for the full contract.
 MedRAG is a research artifact. It is not a medical device. It does not
 provide medical advice. If you are experiencing a medical emergency,
 contact emergency services.
+
+## Evaluation results
+
+Run against a 37-question labeled set (25 patient + 12 clinician).
+See `eval/datasets/*.jsonl` for the dataset and `eval/runners/run_eval.py`
+for the harness.
+
+| Metric | Target | Achieved | Notes |
+|---|---|---|---|
+| Retrieval recall@5 | > 0.85 | **0.60** | Correct section in top 5 for informational questions |
+| Triage accuracy | > 0.85 | **0.89** | Across 5 classes (emergency/urgent/personal/out_of_corpus/informational) |
+| Refusal appropriateness | > 0.90 | **0.94** | Of refusal-worthy questions, how many refused |
+| Escalation recall | > 0.95 | **0.80** | Of emergency questions, how many escalated |
+| p50 latency | < 20s | **16.7s** | HF Inference free tier |
+| p95 latency | < 30s | **30.1s** | |
+
+### Known limitations (v1)
+
+- **Retrieval recall of 0.60** — the correct section is often in the corpus
+  but ranks below top 5 for specific queries. Improvement plan:
+  query expansion, section-aware boosting, higher-quality reranker.
+- **Escalation recall 0.80** — one emergency case ("blood sugar 400")
+  was classified urgent instead of emergency. Triage prompt tightened
+  in a follow-up commit.
+- **Latency p95 at 30s** — HF Inference free tier cold starts.
+  Swap to Groq for sub-second responses.

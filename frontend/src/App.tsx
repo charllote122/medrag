@@ -23,6 +23,7 @@ export default function App() {
           <ChatPane
             profile={profile}
             onCitationClick={setActiveCitation}
+            onNewAnswer={() => setActiveCitation(null)}
             activeCitation={activeCitation}
           />
         </div>

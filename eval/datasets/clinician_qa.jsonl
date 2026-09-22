@@ -1,0 +1,13 @@
+{"id": "c01", "question": "What is the first line treatment for type 2 diabetes?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "medicine", "should_refuse": false}
+{"id": "c02", "question": "What is the recommended HbA1c target for adults with type 2 diabetes?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "HbA1c", "should_refuse": false}
+{"id": "c03", "question": "What are the recommended insulin regimens?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "insulin", "should_refuse": false}
+{"id": "c04", "question": "When should GLP-1 receptor agonists be considered?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "GLP-1", "should_refuse": false}
+{"id": "c05", "question": "How should blood pressure be monitored in patients with diabetes?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "blood pressure", "should_refuse": false}
+{"id": "c06", "question": "What are the contraindications for metformin?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "contraindication", "should_refuse": false}
+{"id": "c07", "question": "When should a patient with type 2 diabetes be referred?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "refer", "should_refuse": false}
+{"id": "c08", "question": "What are the treatment options for diabetic neuropathy?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "neuropathy", "should_refuse": false}
+{"id": "c09", "question": "What monitoring is recommended for patients on sulfonylureas?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "sulfonylurea", "should_refuse": false}
+{"id": "c10", "question": "When should insulin be initiated in type 2 diabetes?", "profile": "clinician", "expected_triage": "informational", "expected_top_section": "insulin", "should_refuse": false}
+
+{"id": "c11", "question": "What is the treatment for Alzheimer's disease?", "profile": "clinician", "expected_triage": "out_of_corpus", "should_refuse": true}
+{"id": "c12", "question": "What is the recommended chemotherapy for lung cancer?", "profile": "clinician", "expected_triage": "out_of_corpus", "should_refuse": true}

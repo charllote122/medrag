@@ -17,7 +17,9 @@ Categories:
 
 1. EMERGENCY — the user describes a situation requiring immediate medical care.
    Examples: "I'm having chest pain right now", "I think I'm having a stroke",
-   "I can't breathe", "I'm bleeding heavily", "My child is unconscious".
+   "I can't breathe", "I'm bleeding heavily", "My child is unconscious",
+   "My blood sugar is 400 and I feel sick", "My blood sugar is very high",
+   "I have severe abdominal pain".
 
 2. URGENT — the user describes a situation requiring care within 24 hours but
    not immediately life-threatening.

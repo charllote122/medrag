@@ -7,10 +7,11 @@ import TriageBanner from "./TriageBanner";
 type Props = {
   profile: Profile;
   onCitationClick: (c: CitationType) => void;
+  onNewAnswer: () => void;
   activeCitation: CitationType | null;
 };
 
-export default function ChatPane({ profile, onCitationClick, activeCitation }: Props) {
+export default function ChatPane({ profile, onCitationClick, onNewAnswer, activeCitation }: Props) {
   const [question, setQuestion] = useState("");
   const [response, setResponse] = useState<QueryResponse | null>(null);
   const [loading, setLoading] = useState(false);
@@ -27,6 +28,7 @@ export default function ChatPane({ profile, onCitationClick, activeCitation }: P
     try {
       const res = await askQuestion({ question: question.trim(), profile });
       setResponse(res);
+      onNewAnswer();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
     } finally {
@@ -82,7 +84,10 @@ export default function ChatPane({ profile, onCitationClick, activeCitation }: P
                       key={c.index}
                       citation={c}
                       onClick={onCitationClick}
-                      active={activeCitation?.index === c.index}
+                      active={
+                        activeCitation?.index === c.index &&
+                        activeCitation?.chunk_id === c.chunk_id
+                      }
                     />
                   ))}
                 </div>
