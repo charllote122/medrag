@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    database_url: str = "postgresql+psycopg://medrag:medrag@localhost:5432/medrag"
+    database_url: str = "postgresql+psycopg://medrag:medrag@localhost:5433/medrag"
     hf_token: str = ""
     embedding_model: str = "BAAI/bge-small-en-v1.5"
     reranker_model: str = "BAAI/bge-reranker-v2-m3"
