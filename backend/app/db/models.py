@@ -3,7 +3,7 @@ from sqlalchemy import String, Integer, DateTime, ForeignKey, Text, JSON, Index
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from pgvector.sqlalchemy import Vector
 
-EMBEDDING_DIM = 1024  # BGE-M3
+EMBEDDING_DIM = 384  # BGE-M3
 
 
 class Base(DeclarativeBase):
