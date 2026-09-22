@@ -1,8 +1,7 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from pydantic import BaseModel, Field
 
 from ...orchestration.pipeline import run_query
-
 
 router = APIRouter(prefix="/api", tags=["query"])
 
@@ -45,11 +44,13 @@ def query(req: QueryRequest) -> QueryResponse:
 
 @router.post("/debug/retrieve")
 def debug_retrieve(req: QueryRequest) -> dict:
-    """Same as /query but returns only the retrieval debug payload."""
     result = run_query(req.question, req.profile)
     return {
         "question": req.question,
         "profile": req.profile,
+        "triage": result.triage,
+        "refused": result.refused,
+        "answer": result.answer,
         "citations": result.citations,
         "debug": result.debug,
     }

@@ -1,8 +1,13 @@
 from .base import RawDocument, Loader
 from .nice import NICELLoader
 from .medlineplus import MedlinePlusLoader
+from .knmf import KNMFLoader
 
-ALL_LOADERS = [NICELLoader(), MedlinePlusLoader()]
+ALL_LOADERS = [
+    NICELLoader(),
+    MedlinePlusLoader(),
+    KNMFLoader(),
+]
 
 
 def find_loader(path):
@@ -12,5 +17,12 @@ def find_loader(path):
     return None
 
 
-__all__ = ["RawDocument", "Loader", "ALL_LOADERS", "find_loader",
-           "NICELLoader", "MedlinePlusLoader"]
+__all__ = [
+    "RawDocument",
+    "Loader",
+    "ALL_LOADERS",
+    "find_loader",
+    "NICELLoader",
+    "MedlinePlusLoader",
+    "KNMFLoader",
+]

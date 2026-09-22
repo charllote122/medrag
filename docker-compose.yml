@@ -7,6 +7,7 @@ services:
       POSTGRES_DB: medrag
     ports: ["5433:5432"]
     volumes: ["medrag_pgdata:/var/lib/postgresql/data"]
+    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U medrag"]
       interval: 5s
