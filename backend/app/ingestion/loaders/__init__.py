@@ -1,12 +1,10 @@
 from .base import RawDocument, Loader
 from .nice import NICELLoader
 from .medlineplus import MedlinePlusLoader
-from .knmf import KNMFLoader
 
 ALL_LOADERS = [
     NICELLoader(),
     MedlinePlusLoader(),
-    KNMFLoader(),
 ]
 
 
@@ -24,5 +22,4 @@ __all__ = [
     "find_loader",
     "NICELLoader",
     "MedlinePlusLoader",
-    "KNMFLoader",
 ]
